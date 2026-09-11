@@ -1,0 +1,11 @@
+pandas>=2.0
+numpy
+scikit-learn>=1.3
+sentence-transformers>=2.0
+openai>=1.0
+python-dotenv
+tqdm
+matplotlib
+seaborn
+tabulate
+scipy

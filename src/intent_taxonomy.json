@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "source_dataset": "Twitter Customer Support (AppleSupport)",
+    "reference_taxonomy": "Banking77 (PolyAI/banking77, HuggingFace)",
+    "clustering_method": "K-Means (k=13)",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "num_messages_clustered": 4955,
+    "note": "Intent labels derived from manual inspection of cluster samples + LLM labeling. Banking77 used as structural reference for taxonomy granularity."
+  },
+  "intents": {
+    "0": {
+      "intent_label": "ios_update_issue",
+      "description": "Problems caused by iOS updates — slowness, WiFi issues, functionality broken after updating",
+      "keywords": ["iOS 11", "update", "slow", "upgrade", "WiFi", "notification"],
+      "typically_needs_escalation": false,
+      "cluster_id": 0,
+      "cluster_size": 573,
+      "example_messages": [
+        "I installed iOS 11.0.2 on my iPad Mini 4. Now my WiFi speed is really slow.",
+        "iPhone SE freezing after recent ios 11 upgrade. Knocked battery life in half.",
+        "what about fixing your keyboard in iOS 11... is soooo slow!"
+      ]
+    },
+    "1": {
+      "intent_label": "keyboard_autocorrect_bug",
+      "description": "Specific keyboard/autocorrect bug where typing 'I' shows garbled characters or question marks",
+      "keywords": ["typing I", "autocorrect", "question mark", "keyboard bug", "I️"],
+      "typically_needs_escalation": false,
+      "cluster_id": 1,
+      "cluster_size": 510,
+      "example_messages": [
+        "why every time I type I it changes to I️",
+        "why does this pop up when I️ type in i?",
+        "is typing 'i' still an issue?"
+      ]
+    },
+    "2": {
+      "intent_label": "device_frustration_complaint",
+      "description": "General frustration and complaints about device issues — freezing, data loss, hardware failures, often with strong negative emotion",
+      "keywords": ["freezing", "deleted", "charger", "broken", "warranty", "bullshit"],
+      "typically_needs_escalation": true,
+      "cluster_id": 2,
+      "cluster_size": 428,
+      "example_messages": [
+        "My phone keep freezing, If it fuck up this time I'm not coming back",
+        "iPhones are shit all of a sudden my pictures/videos and everything been deleted",
+        "Hey do you warranty your home chargers?"
+      ]
+    },
+    "3": {
+      "intent_label": "account_storage_photos",
+      "description": "Questions about iCloud storage, photo management, data recovery, and account settings",
+      "keywords": ["iCloud", "storage", "photos", "lost phone", "permission", "space"],
+      "typically_needs_escalation": false,
+      "cluster_id": 3,
+      "cluster_size": 368,
+      "example_messages": [
+        "Hi, I recently lost my phone however I still have my apple watch. Do you know how to find it?",
+        "is there a way to get more storage space on my phone?",
+        "I am now restoring all my photos from my iCloud"
+      ]
+    },
+    "4": {
+      "intent_label": "media_services_issue",
+      "description": "Issues with iTunes, Apple Music, media playback, and subscription management",
+      "keywords": ["iTunes", "Apple Music", "music", "cancel", "subscription", "video", "audio"],
+      "typically_needs_escalation": false,
+      "cluster_id": 4,
+      "cluster_size": 249,
+      "example_messages": [
+        "How come my itunes movie keeps stopping on desktop",
+        "I'm just trying to cancel my apple music and it's a bunch of bullshit",
+        "my downloaded music keeps disappearing why?"
+      ]
+    },
+    "5": {
+      "intent_label": "general_bug_report",
+      "description": "General software bugs, glitches, and device malfunctions that are hard to categorize specifically",
+      "keywords": ["fix", "bug", "crashing", "broken", "watch", "problem"],
+      "typically_needs_escalation": false,
+      "cluster_id": 5,
+      "cluster_size": 412,
+      "example_messages": [
+        "fix this shit!",
+        "and to top it off the watch is only 4 months old",
+        "Please help us! Have had to start using other pronouns to refer to myself"
+      ]
+    },
+    "6": {
+      "intent_label": "battery_charging_issue",
+      "description": "Battery drain, fast battery discharge, charging problems, battery health concerns",
+      "keywords": ["battery", "drain", "charging", "charger", "low power", "1%"],
+      "typically_needs_escalation": false,
+      "cluster_id": 6,
+      "cluster_size": 356,
+      "example_messages": [
+        "I've just downloaded 11.0.3 and the battery is now running down 1% every few seconds!",
+        "Phone keeps crashing at 60% and saying it's low bat",
+        "#ios11 battery drain issue is horrific, my iphone 7 is draining fast"
+      ]
+    },
+    "7": {
+      "intent_label": "feature_malfunction",
+      "description": "Specific features not working correctly — notifications, buttons, calls, display issues",
+      "keywords": ["notifications", "button", "call", "reachability", "sticky", "not working"],
+      "typically_needs_escalation": false,
+      "cluster_id": 7,
+      "cluster_size": 431,
+      "example_messages": [
+        "no one can understand what I'm saying because of this bug",
+        "Notifications doesnt dropdown in Reachability anymore",
+        "The back button is kinda feeling sticky and not working well"
+      ]
+    },
+    "8": {
+      "intent_label": "performance_lag",
+      "description": "Device running slow, lagging, app store issues, update taking too long",
+      "keywords": ["slow", "lagging", "lag", "install", "update", "app store"],
+      "typically_needs_escalation": false,
+      "cluster_id": 8,
+      "cluster_size": 489,
+      "example_messages": [
+        "why does it take 3 hours to update the Apple Watch?",
+        "updated to new iOS and I can barely use my phone because it is lagging so bad",
+        "My iPhone been moving slow af the past couple weeks"
+      ]
+    },
+    "9": {
+      "intent_label": "non_english_message",
+      "description": "Customer messages in languages other than English — Portuguese, Spanish, Russian, French, etc.",
+      "keywords": ["português", "español", "français", "русский"],
+      "typically_needs_escalation": true,
+      "cluster_id": 9,
+      "cluster_size": 141,
+      "example_messages": [
+        "Ei vcs vão dar um jeito no icloud ou eu posso cancelar a assinatura?",
+        "no puedo descargar ninguna app con iOS 11",
+        "Depuis iOS 11, ma batterie descend a une vitesse!"
+      ]
+    },
+    "10": {
+      "intent_label": "hardware_malfunction",
+      "description": "Hardware issues — screen problems, sound not working, speakers, touch issues, phone restarting",
+      "keywords": ["screen", "sound", "speaker", "ringtone", "crashing", "restarting", "display"],
+      "typically_needs_escalation": false,
+      "cluster_id": 10,
+      "cluster_size": 399,
+      "example_messages": [
+        "Umm why are my sounds not working when everything is turned up",
+        "my phone's screen randomly swiping but not clicking",
+        "my iphone 7 keeps crashing and kind of restarting"
+      ]
+    },
+    "11": {
+      "intent_label": "service_design_feedback",
+      "description": "Feedback on Apple's service, product design, UX complaints, repair experiences",
+      "keywords": ["design", "UX", "warranty", "replaced", "report", "Apple Watch"],
+      "typically_needs_escalation": false,
+      "cluster_id": 11,
+      "cluster_size": 256,
+      "example_messages": [
+        "Out of three years i have replaced 3 times speaker.. 2 times display",
+        "I'm not enjoying the design of the new UX",
+        "Hey, why is the Apple Watch OS update so slow to install?"
+      ]
+    },
+    "12": {
+      "intent_label": "billing_store_account",
+      "description": "Billing issues, App Store problems, store pickup, subscription cancellation, payment issues",
+      "keywords": ["store", "billing", "debit card", "subscription", "cancel", "order", "pickup"],
+      "typically_needs_escalation": true,
+      "cluster_id": 12,
+      "cluster_size": 343,
+      "example_messages": [
+        "I can't update my apps because my debit card is being declined by the settings",
+        "An employee got in my face about picking up an order",
+        "I've been trying for days to cancel a subscription to an app"
+      ]
+    }
+  }
+}
